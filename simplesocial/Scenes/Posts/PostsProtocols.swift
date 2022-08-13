@@ -13,7 +13,7 @@ import UIKit
 
 // MARK: Wireframe -
 protocol PostsWireframeProtocol: AnyObject {
-    func routeToCreatePost()
+    func routeToCreatePost(delegate: CreatePostDelegate, selectedUser: User)
 }
 // MARK: Presenter -
 protocol PostsPresenterProtocol: AnyObject {

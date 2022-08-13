@@ -10,21 +10,31 @@
 
 import UIKit
 
+protocol CreatePostDelegate: AnyObject {
+    func didSavePost()
+}
+
 class CreatePostRouter: CreatePostWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule(delegate: CreatePostDelegate, selectedUser: User) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = CreatePostViewController(nibName: nil, bundle: nil)
         let interactor = CreatePostInteractor()
         let router = CreatePostRouter()
         let presenter = CreatePostPresenter(interface: view, interactor: interactor, router: router)
 
+        presenter.delegate = delegate
+        presenter.selectedUser = selectedUser
+        
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
-
         return view
+    }
+    
+    func routeToBack() {
+        viewController?.navigationController?.popViewController(animated: true)
     }
 }

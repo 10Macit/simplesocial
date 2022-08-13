@@ -11,6 +11,12 @@
 import UIKit
 
 class CreatePostInteractor: CreatePostInteractorInputProtocol {
-
     weak var presenter: CreatePostInteractorOutputProtocol?
+    var remoteDataSource = RemoteDataSource()
+
+    func savePost(user: User, text: String, imageUrl: String) {
+        let post = Post(user: user, text: text, image: imageUrl)
+        remoteDataSource.createPost(post: post)
+        presenter?.postSaveSuccess()
+    }
 }

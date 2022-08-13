@@ -17,6 +17,7 @@ class PostsPresenter: PostsPresenterProtocol, PostsInteractorOutputProtocol {
     private let router: PostsWireframeProtocol
 
     private var users: [User] = []
+    private var selectedUser: User?
     
     init(interface: PostsViewProtocol, interactor: PostsInteractorInputProtocol?, router: PostsWireframeProtocol) {
         self.view = interface
@@ -46,18 +47,30 @@ extension PostsPresenter {
     
     func presentUsers(users: [User]) {
         self.users = users
-        let viewModel: UserViewModel = .init(userName: users.first?.username ?? "")
+        selectedUser = users.first
+        let viewModel: UserViewModel = .init(userName: selectedUser?.username ?? "")
         view?.presentUser(viewModel: viewModel)
         view?.presentUsers(viewModels: users.map({$0.username}))
     }
     
     func selectUser(at index: Int) {
-        let viewModel: UserViewModel = .init(userName: users[index].username)
-        view?.presentUser(viewModel: viewModel)
+        selectedUser = users[index]
+        if let selectedUser = selectedUser {
+            let viewModel: UserViewModel = .init(userName: selectedUser.username)
+            view?.presentUser(viewModel: viewModel)
+        }
     }
     
     func presentCreateScreen() {
-        router.routeToCreatePost()
+        if let selectedUser = selectedUser {
+            router.routeToCreatePost(delegate: self, selectedUser: selectedUser)
+        }
     }
     
+}
+
+extension PostsPresenter: CreatePostDelegate {
+    func didSavePost() {
+        interactor?.fetchPosts()
+    }
 }

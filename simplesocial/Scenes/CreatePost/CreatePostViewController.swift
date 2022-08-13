@@ -11,11 +11,30 @@
 import UIKit
 
 class CreatePostViewController: UIViewController, CreatePostViewProtocol {
+    
+    @IBOutlet weak var imageUrlTextField: UITextField!
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var saveButton: UIButton!
 
-	var presenter: CreatePostPresenterProtocol?
+    var presenter: CreatePostPresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
+    }
+    
+    private func setupViews() {
+        textView.layer.borderWidth = 1
+        textView.layer.borderColor = UIColor.lightGray.cgColor
+        textView.layer.cornerRadius = 8
+        saveButton.layer.cornerRadius = 8
     }
 
+    func presentSaveError(title: String, message: String) {
+        showAlert(with: title, message: message)
+    }
+    
+    @IBAction func savePost() {
+        presenter?.savePost(text: textView.text, imageUrl: imageUrlTextField.text)
+    }
 }

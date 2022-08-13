@@ -15,11 +15,31 @@ class CreatePostPresenter: CreatePostPresenterProtocol, CreatePostInteractorOutp
     weak private var view: CreatePostViewProtocol?
     var interactor: CreatePostInteractorInputProtocol?
     private let router: CreatePostWireframeProtocol
+    
+    weak var delegate: CreatePostDelegate?
+    var selectedUser: User?
 
     init(interface: CreatePostViewProtocol, interactor: CreatePostInteractorInputProtocol?, router: CreatePostWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router
     }
+    
+    func savePost(text: String?, imageUrl: String?) {
+        guard let text = text,
+              !text.isEmpty,
+                let imageUrl = imageUrl,
+                !imageUrl.isEmpty else {
+            view?.presentSaveError(title: "Error", message: "Please fill the all form elements")
+            return
+        }
+        if let selectedUser = selectedUser {
+            interactor?.savePost(user: selectedUser, text: text, imageUrl: imageUrl)
+        }
+    }
 
+    func postSaveSuccess() {
+        delegate?.didSavePost()
+        router.routeToBack()
+    }
 }

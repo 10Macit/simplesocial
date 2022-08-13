@@ -12,9 +12,9 @@ class LocalDataManager {
     static let shared = LocalDataManager()
     
     private static var mockUsers = [
-        User(id: "1", name: "Elon Musk", username: "elonmusk"),
-        User(id: "2", name: "John Sundell", username: "johnsundell"),
-        User(id: "3", name: "The New York Times", username: "nytimes"),
+        User(name: "Elon Musk", username: "elonmusk"),
+        User(name: "John Sundell", username: "johnsundell"),
+        User(name: "The New York Times", username: "nytimes"),
     ]
     
     private static var posts: [Post] = [
@@ -39,7 +39,7 @@ class LocalDataManager {
     }
     
     func add(post: Post) {
-        LocalDataManager.posts.append(post)
+        LocalDataManager.posts.insert(post, at: 0)
     }
 }
 

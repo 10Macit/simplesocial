@@ -35,6 +35,7 @@
 		73E7181428A809050049C17B /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E7181328A809050049C17B /* UserView.swift */; };
 		73E7181628A8099E0049C17B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E7181528A8099E0049C17B /* UIView+Extensions.swift */; };
 		73E7181928A813510049C17B /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 73E7181828A813510049C17B /* DropDown */; };
+		73E7181B28A824D80049C17B /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E7181A28A824D80049C17B /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		73E7180D28A7E50E0049C17B /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		73E7181328A809050049C17B /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		73E7181528A8099E0049C17B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		73E7181A28A824D80049C17B /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			children = (
 				73E7180D28A7E50E0049C17B /* UITableView+Extensions.swift */,
 				73E7181528A8099E0049C17B /* UIView+Extensions.swift */,
+				73E7181A28A824D80049C17B /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				73E717EB28A7D5410049C17B /* PostsProtocols.swift in Sources */,
 				73E717FD28A7DB490049C17B /* DataSource.swift in Sources */,
 				73E717F928A7D5680049C17B /* CreatePostInteractor.swift in Sources */,
+				73E7181B28A824D80049C17B /* UIViewController+Extensions.swift in Sources */,
 				73E717F628A7D5680049C17B /* CreatePostRouter.swift in Sources */,
 				73E717EC28A7D5410049C17B /* PostsInteractor.swift in Sources */,
 				73E7181428A809050049C17B /* UserView.swift in Sources */,

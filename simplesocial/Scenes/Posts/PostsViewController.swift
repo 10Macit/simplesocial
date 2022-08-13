@@ -19,7 +19,6 @@ class PostsViewController: UIViewController, PostsViewProtocol {
         let dropDown = DropDown()
         dropDown.anchorView = navigationItem.leftBarButtonItem
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-          print("Selected item: \(item) at index: \(index)")
             presenter?.selectUser(at: index)
         }
         return dropDown

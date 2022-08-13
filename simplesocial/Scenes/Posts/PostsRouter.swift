@@ -18,6 +18,8 @@ class PostsRouter: PostsWireframeProtocol {
         // Change to get view from storyboard if not using progammatic UI
         let view = PostsViewController(nibName: nil, bundle: nil)
         let navigationController = UINavigationController(rootViewController: view)
+        navigationController.navigationBar.isTranslucent = true
+        navigationController.navigationBar.backgroundColor = .white
         let interactor = PostsInteractor()
         let router = PostsRouter()
         let presenter = PostsPresenter(interface: view, interactor: interactor, router: router)
@@ -29,8 +31,8 @@ class PostsRouter: PostsWireframeProtocol {
         return navigationController
     }
     
-    func routeToCreatePost() {
-        let createPostVC = CreatePostRouter.createModule()
+    func routeToCreatePost(delegate: CreatePostDelegate, selectedUser: User) {
+        let createPostVC = CreatePostRouter.createModule(delegate: delegate, selectedUser: selectedUser)
         viewController?.navigationController?.pushViewController(createPostVC, animated: true)
     }
 }
