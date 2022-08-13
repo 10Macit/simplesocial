@@ -22,12 +22,14 @@ protocol PostsPresenterProtocol: AnyObject {
     
     func viewDidLoad()
     func presentCreateScreen()
+    func selectUser(at index: Int)
 }
 
 // MARK: Interactor -
 protocol PostsInteractorOutputProtocol: AnyObject {
 
     func presentPosts(posts: [Post])
+    func presentUsers(users: [User])
 }
 
 protocol PostsInteractorInputProtocol: AnyObject {
@@ -35,6 +37,7 @@ protocol PostsInteractorInputProtocol: AnyObject {
     var presenter: PostsInteractorOutputProtocol?  { get set }
 
     func fetchPosts()
+    func fetchUsers()
     
 }
 
@@ -43,5 +46,11 @@ protocol PostsViewProtocol: AnyObject {
 
     var presenter: PostsPresenterProtocol?  { get set }
     
-    func populateViewModels(viewModels: [PostViewModel])
+    func presentPost(viewModels: [PostViewModel])
+    func presentUser(viewModel: UserViewModel)
+    func presentUsers(viewModels: [String])
+}
+
+struct UserViewModel {
+    let userName: String
 }

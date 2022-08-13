@@ -34,6 +34,10 @@ class LocalDataManager {
         LocalDataManager.posts
     }
     
+    func getUsers() -> [User] {
+        LocalDataManager.mockUsers
+    }
+    
     func add(post: Post) {
         LocalDataManager.posts.append(post)
     }

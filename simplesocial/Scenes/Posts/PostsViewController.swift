@@ -9,10 +9,21 @@
 //
 
 import UIKit
+import DropDown
 
 class PostsViewController: UIViewController, PostsViewProtocol {
-
+    
     @IBOutlet private weak var tableView: UITableView!
+    private lazy var userView = UserView(delegate: self)
+    private lazy var userDropDownView: DropDown = {
+        let dropDown = DropDown()
+        dropDown.anchorView = navigationItem.leftBarButtonItem
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+          print("Selected item: \(item) at index: \(index)")
+            presenter?.selectUser(at: index)
+        }
+        return dropDown
+    }()
     
     var presenter: PostsPresenterProtocol?
     private var postViewModels: [PostViewModel] = []
@@ -33,19 +44,26 @@ class PostsViewController: UIViewController, PostsViewProtocol {
     private func setupNavigationItems() {
         navigationItem.title = "Feed"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create+", style: .plain, target: self, action: #selector(didTapCreateButton))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: userView)
     }
     
     @objc private func didTapCreateButton() {
         presenter?.presentCreateScreen()
     }
     
-    func populateViewModels(viewModels: [PostViewModel]) {
+    func presentPost(viewModels: [PostViewModel]) {
         self.postViewModels = viewModels
         tableView.dataSource = self
         tableView.reloadData()
     }
     
-
+    func presentUser(viewModel: UserViewModel) {
+        userView.set(viewModel: viewModel)
+    }
+    
+    func presentUsers(viewModels: [String]) {
+        userDropDownView.dataSource = viewModels
+    }
 }
 
 extension PostsViewController: UITableViewDelegate {
@@ -71,4 +89,10 @@ extension PostsViewController: UITableViewDataSource {
         return cell
     }
     
+}
+
+extension PostsViewController: UserViewDelegate {
+    func didTapUserView() {
+        userDropDownView.show()
+    }
 }

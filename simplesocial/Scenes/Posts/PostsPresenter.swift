@@ -16,6 +16,8 @@ class PostsPresenter: PostsPresenterProtocol, PostsInteractorOutputProtocol {
     var interactor: PostsInteractorInputProtocol?
     private let router: PostsWireframeProtocol
 
+    private var users: [User] = []
+    
     init(interface: PostsViewProtocol, interactor: PostsInteractorInputProtocol?, router: PostsWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
@@ -28,6 +30,7 @@ extension PostsPresenter {
     
     func viewDidLoad() {
         interactor?.fetchPosts()
+        interactor?.fetchUsers()
     }
     
     func presentPosts(posts: [Post]) {
@@ -38,7 +41,19 @@ extension PostsPresenter {
                   content: $0.text,
                   contentImageURL: URL(string: $0.image ))
         })
-        view?.populateViewModels(viewModels: viewModels)
+        view?.presentPost(viewModels: viewModels)
+    }
+    
+    func presentUsers(users: [User]) {
+        self.users = users
+        let viewModel: UserViewModel = .init(userName: users.first?.username ?? "")
+        view?.presentUser(viewModel: viewModel)
+        view?.presentUsers(viewModels: users.map({$0.username}))
+    }
+    
+    func selectUser(at index: Int) {
+        let viewModel: UserViewModel = .init(userName: users[index].username)
+        view?.presentUser(viewModel: viewModel)
     }
     
     func presentCreateScreen() {

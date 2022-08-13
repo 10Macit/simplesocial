@@ -32,6 +32,9 @@
 		73E7180B28A7E0310049C17B /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E7180928A7E0310049C17B /* PostTableViewCell.xib */; };
 		73E7180E28A7E50E0049C17B /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E7180D28A7E50E0049C17B /* UITableView+Extensions.swift */; };
 		73E7181128A7F3B20049C17B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 73E7181028A7F3B20049C17B /* Kingfisher */; };
+		73E7181428A809050049C17B /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E7181328A809050049C17B /* UserView.swift */; };
+		73E7181628A8099E0049C17B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E7181528A8099E0049C17B /* UIView+Extensions.swift */; };
+		73E7181928A813510049C17B /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 73E7181828A813510049C17B /* DropDown */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +64,8 @@
 		73E7180828A7E0310049C17B /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		73E7180928A7E0310049C17B /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		73E7180D28A7E50E0049C17B /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		73E7181328A809050049C17B /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		73E7181528A8099E0049C17B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73E7181128A7F3B20049C17B /* Kingfisher in Frameworks */,
+				73E7181928A813510049C17B /* DropDown in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +124,7 @@
 		73E717E128A7D5130049C17B /* Posts */ = {
 			isa = PBXGroup;
 			children = (
-				73E7180728A7E0220049C17B /* PostCell */,
+				73E7181228A808F30049C17B /* Views */,
 				73E717E228A7D5400049C17B /* PostsPresenter.swift */,
 				73E717E328A7D5400049C17B /* PostsRouter.swift */,
 				73E717E428A7D5400049C17B /* PostsViewController.swift */,
@@ -175,8 +181,18 @@
 			isa = PBXGroup;
 			children = (
 				73E7180D28A7E50E0049C17B /* UITableView+Extensions.swift */,
+				73E7181528A8099E0049C17B /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		73E7181228A808F30049C17B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				73E7180728A7E0220049C17B /* PostCell */,
+				73E7181328A809050049C17B /* UserView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +213,7 @@
 			name = simplesocial;
 			packageProductDependencies = (
 				73E7181028A7F3B20049C17B /* Kingfisher */,
+				73E7181828A813510049C17B /* DropDown */,
 			);
 			productName = simplesocial;
 			productReference = 73E717C928A7B8CA0049C17B /* simplesocial.app */;
@@ -228,6 +245,7 @@
 			mainGroup = 73E717C028A7B8CA0049C17B;
 			packageReferences = (
 				73E7180F28A7F3B20049C17B /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				73E7181728A813510049C17B /* XCRemoteSwiftPackageReference "DropDown" */,
 			);
 			productRefGroup = 73E717CA28A7B8CA0049C17B /* Products */;
 			projectDirPath = "";
@@ -258,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73E7181628A8099E0049C17B /* UIView+Extensions.swift in Sources */,
 				73E717EA28A7D5410049C17B /* PostsViewController.swift in Sources */,
 				73E717E828A7D5410049C17B /* PostsPresenter.swift in Sources */,
 				73E717EB28A7D5410049C17B /* PostsProtocols.swift in Sources */,
@@ -265,6 +284,7 @@
 				73E717F928A7D5680049C17B /* CreatePostInteractor.swift in Sources */,
 				73E717F628A7D5680049C17B /* CreatePostRouter.swift in Sources */,
 				73E717EC28A7D5410049C17B /* PostsInteractor.swift in Sources */,
+				73E7181428A809050049C17B /* UserView.swift in Sources */,
 				73E717E928A7D5410049C17B /* PostsRouter.swift in Sources */,
 				73E7180228A7DBD10049C17B /* User.swift in Sources */,
 				73E717FF28A7DB720049C17B /* RemoteDataSource.swift in Sources */,
@@ -496,6 +516,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		73E7181728A813510049C17B /* XCRemoteSwiftPackageReference "DropDown" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AssistoLab/DropDown";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -503,6 +531,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 73E7180F28A7F3B20049C17B /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		73E7181828A813510049C17B /* DropDown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 73E7181728A813510049C17B /* XCRemoteSwiftPackageReference "DropDown" */;
+			productName = DropDown;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

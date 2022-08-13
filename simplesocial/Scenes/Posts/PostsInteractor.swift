@@ -19,4 +19,9 @@ class PostsInteractor: PostsInteractorInputProtocol {
         let posts = remoteDataSource.fetchPosts()
         presenter?.presentPosts(posts: posts)
     }
+    
+    func fetchUsers() {
+        let users = remoteDataSource.fetchUsers()
+        presenter?.presentUsers(users: users)
+    }
 }

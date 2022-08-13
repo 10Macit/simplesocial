@@ -14,7 +14,7 @@ final class RemoteDataSource: DataSource {
     }
     
     func fetchUsers() -> [User] {
-        []
+        LocalDataManager.shared.getUsers()
     }
     
     func createPost(post: Post) {
