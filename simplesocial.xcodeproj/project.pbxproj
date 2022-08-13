@@ -9,21 +9,41 @@
 /* Begin PBXBuildFile section */
 		73E717CD28A7B8CA0049C17B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E717CC28A7B8CA0049C17B /* AppDelegate.swift */; };
 		73E717CF28A7B8CA0049C17B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E717CE28A7B8CA0049C17B /* SceneDelegate.swift */; };
-		73E717D128A7B8CA0049C17B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E717D028A7B8CA0049C17B /* ViewController.swift */; };
-		73E717D428A7B8CA0049C17B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73E717D228A7B8CA0049C17B /* Main.storyboard */; };
 		73E717D628A7B8CC0049C17B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73E717D528A7B8CC0049C17B /* Assets.xcassets */; };
 		73E717D928A7B8CC0049C17B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73E717D728A7B8CC0049C17B /* LaunchScreen.storyboard */; };
+		73E717E828A7D5410049C17B /* PostsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E717E228A7D5400049C17B /* PostsPresenter.swift */; };
+		73E717E928A7D5410049C17B /* PostsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E717E328A7D5400049C17B /* PostsRouter.swift */; };
+		73E717EA28A7D5410049C17B /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E717E428A7D5400049C17B /* PostsViewController.swift */; };
+		73E717EB28A7D5410049C17B /* PostsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E717E528A7D5400049C17B /* PostsProtocols.swift */; };
+		73E717EC28A7D5410049C17B /* PostsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E717E628A7D5400049C17B /* PostsInteractor.swift */; };
+		73E717ED28A7D5410049C17B /* PostsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E717E728A7D5400049C17B /* PostsViewController.xib */; };
+		73E717F528A7D5680049C17B /* CreatePostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E717EF28A7D5680049C17B /* CreatePostPresenter.swift */; };
+		73E717F628A7D5680049C17B /* CreatePostRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E717F028A7D5680049C17B /* CreatePostRouter.swift */; };
+		73E717F728A7D5680049C17B /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E717F128A7D5680049C17B /* CreatePostViewController.swift */; };
+		73E717F828A7D5680049C17B /* CreatePostProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E717F228A7D5680049C17B /* CreatePostProtocols.swift */; };
+		73E717F928A7D5680049C17B /* CreatePostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E717F328A7D5680049C17B /* CreatePostInteractor.swift */; };
+		73E717FA28A7D5680049C17B /* CreatePostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E717F428A7D5680049C17B /* CreatePostViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		73E717C928A7B8CA0049C17B /* simplesocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simplesocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E717CC28A7B8CA0049C17B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73E717CE28A7B8CA0049C17B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		73E717D028A7B8CA0049C17B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		73E717D328A7B8CA0049C17B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		73E717D528A7B8CC0049C17B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73E717D828A7B8CC0049C17B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73E717DA28A7B8CC0049C17B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73E717E228A7D5400049C17B /* PostsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsPresenter.swift; sourceTree = "<group>"; };
+		73E717E328A7D5400049C17B /* PostsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRouter.swift; sourceTree = "<group>"; };
+		73E717E428A7D5400049C17B /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		73E717E528A7D5400049C17B /* PostsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsProtocols.swift; sourceTree = "<group>"; };
+		73E717E628A7D5400049C17B /* PostsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsInteractor.swift; sourceTree = "<group>"; };
+		73E717E728A7D5400049C17B /* PostsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsViewController.xib; sourceTree = "<group>"; };
+		73E717EF28A7D5680049C17B /* CreatePostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostPresenter.swift; sourceTree = "<group>"; };
+		73E717F028A7D5680049C17B /* CreatePostRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostRouter.swift; sourceTree = "<group>"; };
+		73E717F128A7D5680049C17B /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
+		73E717F228A7D5680049C17B /* CreatePostProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostProtocols.swift; sourceTree = "<group>"; };
+		73E717F328A7D5680049C17B /* CreatePostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostInteractor.swift; sourceTree = "<group>"; };
+		73E717F428A7D5680049C17B /* CreatePostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePostViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +76,49 @@
 		73E717CB28A7B8CA0049C17B /* simplesocial */ = {
 			isa = PBXGroup;
 			children = (
+				73E717E028A7D4F10049C17B /* Scenes */,
 				73E717CC28A7B8CA0049C17B /* AppDelegate.swift */,
 				73E717CE28A7B8CA0049C17B /* SceneDelegate.swift */,
-				73E717D028A7B8CA0049C17B /* ViewController.swift */,
-				73E717D228A7B8CA0049C17B /* Main.storyboard */,
 				73E717D528A7B8CC0049C17B /* Assets.xcassets */,
 				73E717D728A7B8CC0049C17B /* LaunchScreen.storyboard */,
 				73E717DA28A7B8CC0049C17B /* Info.plist */,
 			);
 			path = simplesocial;
+			sourceTree = "<group>";
+		};
+		73E717E028A7D4F10049C17B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				73E717EE28A7D5520049C17B /* CreatePost */,
+				73E717E128A7D5130049C17B /* Posts */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		73E717E128A7D5130049C17B /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				73E717E228A7D5400049C17B /* PostsPresenter.swift */,
+				73E717E328A7D5400049C17B /* PostsRouter.swift */,
+				73E717E428A7D5400049C17B /* PostsViewController.swift */,
+				73E717E528A7D5400049C17B /* PostsProtocols.swift */,
+				73E717E628A7D5400049C17B /* PostsInteractor.swift */,
+				73E717E728A7D5400049C17B /* PostsViewController.xib */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		73E717EE28A7D5520049C17B /* CreatePost */ = {
+			isa = PBXGroup;
+			children = (
+				73E717EF28A7D5680049C17B /* CreatePostPresenter.swift */,
+				73E717F028A7D5680049C17B /* CreatePostRouter.swift */,
+				73E717F128A7D5680049C17B /* CreatePostViewController.swift */,
+				73E717F228A7D5680049C17B /* CreatePostProtocols.swift */,
+				73E717F328A7D5680049C17B /* CreatePostInteractor.swift */,
+				73E717F428A7D5680049C17B /* CreatePostViewController.xib */,
+			);
+			path = CreatePost;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +179,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73E717ED28A7D5410049C17B /* PostsViewController.xib in Resources */,
+				73E717FA28A7D5680049C17B /* CreatePostViewController.xib in Resources */,
 				73E717D928A7B8CC0049C17B /* LaunchScreen.storyboard in Resources */,
 				73E717D628A7B8CC0049C17B /* Assets.xcassets in Resources */,
-				73E717D428A7B8CA0049C17B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +193,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73E717D128A7B8CA0049C17B /* ViewController.swift in Sources */,
+				73E717EA28A7D5410049C17B /* PostsViewController.swift in Sources */,
+				73E717E828A7D5410049C17B /* PostsPresenter.swift in Sources */,
+				73E717EB28A7D5410049C17B /* PostsProtocols.swift in Sources */,
+				73E717F928A7D5680049C17B /* CreatePostInteractor.swift in Sources */,
+				73E717F628A7D5680049C17B /* CreatePostRouter.swift in Sources */,
+				73E717EC28A7D5410049C17B /* PostsInteractor.swift in Sources */,
+				73E717E928A7D5410049C17B /* PostsRouter.swift in Sources */,
+				73E717F828A7D5680049C17B /* CreatePostProtocols.swift in Sources */,
+				73E717F728A7D5680049C17B /* CreatePostViewController.swift in Sources */,
 				73E717CD28A7B8CA0049C17B /* AppDelegate.swift in Sources */,
+				73E717F528A7D5680049C17B /* CreatePostPresenter.swift in Sources */,
 				73E717CF28A7B8CA0049C17B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +211,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		73E717D228A7B8CA0049C17B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				73E717D328A7B8CA0049C17B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		73E717D728A7B8CC0049C17B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +350,6 @@
 				INFOPLIST_FILE = simplesocial/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +377,6 @@
 				INFOPLIST_FILE = simplesocial/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
