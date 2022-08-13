@@ -23,6 +23,15 @@
 		73E717F828A7D5680049C17B /* CreatePostProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E717F228A7D5680049C17B /* CreatePostProtocols.swift */; };
 		73E717F928A7D5680049C17B /* CreatePostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E717F328A7D5680049C17B /* CreatePostInteractor.swift */; };
 		73E717FA28A7D5680049C17B /* CreatePostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E717F428A7D5680049C17B /* CreatePostViewController.xib */; };
+		73E717FD28A7DB490049C17B /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E717FC28A7DB490049C17B /* DataSource.swift */; };
+		73E717FF28A7DB720049C17B /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E717FE28A7DB720049C17B /* RemoteDataSource.swift */; };
+		73E7180228A7DBD10049C17B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E7180128A7DBD10049C17B /* User.swift */; };
+		73E7180428A7DBED0049C17B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E7180328A7DBED0049C17B /* Post.swift */; };
+		73E7180628A7DCC50049C17B /* LocalDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E7180528A7DCC50049C17B /* LocalDataGenerator.swift */; };
+		73E7180A28A7E0310049C17B /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E7180828A7E0310049C17B /* PostTableViewCell.swift */; };
+		73E7180B28A7E0310049C17B /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E7180928A7E0310049C17B /* PostTableViewCell.xib */; };
+		73E7180E28A7E50E0049C17B /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E7180D28A7E50E0049C17B /* UITableView+Extensions.swift */; };
+		73E7181128A7F3B20049C17B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 73E7181028A7F3B20049C17B /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +53,14 @@
 		73E717F228A7D5680049C17B /* CreatePostProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostProtocols.swift; sourceTree = "<group>"; };
 		73E717F328A7D5680049C17B /* CreatePostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostInteractor.swift; sourceTree = "<group>"; };
 		73E717F428A7D5680049C17B /* CreatePostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePostViewController.xib; sourceTree = "<group>"; };
+		73E717FC28A7DB490049C17B /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		73E717FE28A7DB720049C17B /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
+		73E7180128A7DBD10049C17B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		73E7180328A7DBED0049C17B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		73E7180528A7DCC50049C17B /* LocalDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataGenerator.swift; sourceTree = "<group>"; };
+		73E7180828A7E0310049C17B /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		73E7180928A7E0310049C17B /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		73E7180D28A7E50E0049C17B /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73E7181128A7F3B20049C17B /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +94,8 @@
 		73E717CB28A7B8CA0049C17B /* simplesocial */ = {
 			isa = PBXGroup;
 			children = (
+				73E7180C28A7E4F90049C17B /* Extensions */,
+				73E717FB28A7DB170049C17B /* Network */,
 				73E717E028A7D4F10049C17B /* Scenes */,
 				73E717CC28A7B8CA0049C17B /* AppDelegate.swift */,
 				73E717CE28A7B8CA0049C17B /* SceneDelegate.swift */,
@@ -98,6 +118,7 @@
 		73E717E128A7D5130049C17B /* Posts */ = {
 			isa = PBXGroup;
 			children = (
+				73E7180728A7E0220049C17B /* PostCell */,
 				73E717E228A7D5400049C17B /* PostsPresenter.swift */,
 				73E717E328A7D5400049C17B /* PostsRouter.swift */,
 				73E717E428A7D5400049C17B /* PostsViewController.swift */,
@@ -121,6 +142,43 @@
 			path = CreatePost;
 			sourceTree = "<group>";
 		};
+		73E717FB28A7DB170049C17B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				73E7180028A7DBAF0049C17B /* Models */,
+				73E717FC28A7DB490049C17B /* DataSource.swift */,
+				73E717FE28A7DB720049C17B /* RemoteDataSource.swift */,
+				73E7180528A7DCC50049C17B /* LocalDataGenerator.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		73E7180028A7DBAF0049C17B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				73E7180128A7DBD10049C17B /* User.swift */,
+				73E7180328A7DBED0049C17B /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		73E7180728A7E0220049C17B /* PostCell */ = {
+			isa = PBXGroup;
+			children = (
+				73E7180828A7E0310049C17B /* PostTableViewCell.swift */,
+				73E7180928A7E0310049C17B /* PostTableViewCell.xib */,
+			);
+			path = PostCell;
+			sourceTree = "<group>";
+		};
+		73E7180C28A7E4F90049C17B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				73E7180D28A7E50E0049C17B /* UITableView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +195,9 @@
 			dependencies = (
 			);
 			name = simplesocial;
+			packageProductDependencies = (
+				73E7181028A7F3B20049C17B /* Kingfisher */,
+			);
 			productName = simplesocial;
 			productReference = 73E717C928A7B8CA0049C17B /* simplesocial.app */;
 			productType = "com.apple.product-type.application";
@@ -165,6 +226,9 @@
 				Base,
 			);
 			mainGroup = 73E717C028A7B8CA0049C17B;
+			packageReferences = (
+				73E7180F28A7F3B20049C17B /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 73E717CA28A7B8CA0049C17B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -180,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73E717ED28A7D5410049C17B /* PostsViewController.xib in Resources */,
+				73E7180B28A7E0310049C17B /* PostTableViewCell.xib in Resources */,
 				73E717FA28A7D5680049C17B /* CreatePostViewController.xib in Resources */,
 				73E717D928A7B8CC0049C17B /* LaunchScreen.storyboard in Resources */,
 				73E717D628A7B8CC0049C17B /* Assets.xcassets in Resources */,
@@ -196,15 +261,22 @@
 				73E717EA28A7D5410049C17B /* PostsViewController.swift in Sources */,
 				73E717E828A7D5410049C17B /* PostsPresenter.swift in Sources */,
 				73E717EB28A7D5410049C17B /* PostsProtocols.swift in Sources */,
+				73E717FD28A7DB490049C17B /* DataSource.swift in Sources */,
 				73E717F928A7D5680049C17B /* CreatePostInteractor.swift in Sources */,
 				73E717F628A7D5680049C17B /* CreatePostRouter.swift in Sources */,
 				73E717EC28A7D5410049C17B /* PostsInteractor.swift in Sources */,
 				73E717E928A7D5410049C17B /* PostsRouter.swift in Sources */,
+				73E7180228A7DBD10049C17B /* User.swift in Sources */,
+				73E717FF28A7DB720049C17B /* RemoteDataSource.swift in Sources */,
 				73E717F828A7D5680049C17B /* CreatePostProtocols.swift in Sources */,
+				73E7180428A7DBED0049C17B /* Post.swift in Sources */,
 				73E717F728A7D5680049C17B /* CreatePostViewController.swift in Sources */,
 				73E717CD28A7B8CA0049C17B /* AppDelegate.swift in Sources */,
 				73E717F528A7D5680049C17B /* CreatePostPresenter.swift in Sources */,
+				73E7180E28A7E50E0049C17B /* UITableView+Extensions.swift in Sources */,
+				73E7180628A7DCC50049C17B /* LocalDataGenerator.swift in Sources */,
 				73E717CF28A7B8CA0049C17B /* SceneDelegate.swift in Sources */,
+				73E7180A28A7E0310049C17B /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +486,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		73E7180F28A7F3B20049C17B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		73E7181028A7F3B20049C17B /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 73E7180F28A7F3B20049C17B /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 73E717C128A7B8CA0049C17B /* Project object */;
 }

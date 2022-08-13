@@ -13,4 +13,10 @@ import UIKit
 class PostsInteractor: PostsInteractorInputProtocol {
 
     weak var presenter: PostsInteractorOutputProtocol?
+    var remoteDataSource = RemoteDataSource()
+    
+    func fetchPosts() {
+        let posts = remoteDataSource.fetchPosts()
+        presenter?.presentPosts(posts: posts)
+    }
 }

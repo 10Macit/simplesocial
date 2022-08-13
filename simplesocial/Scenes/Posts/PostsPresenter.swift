@@ -23,3 +23,26 @@ class PostsPresenter: PostsPresenterProtocol, PostsInteractorOutputProtocol {
     }
 
 }
+
+extension PostsPresenter {
+    
+    func viewDidLoad() {
+        interactor?.fetchPosts()
+    }
+    
+    func presentPosts(posts: [Post]) {
+        let viewModels: [PostViewModel] = posts.map({
+            .init(imageName: "person.crop.circle.fill",
+                  name: $0.user.name,
+                  userName: "@" + $0.user.username,
+                  content: $0.text,
+                  contentImageURL: URL(string: $0.image ))
+        })
+        view?.populateViewModels(viewModels: viewModels)
+    }
+    
+    func presentCreateScreen() {
+        router.routeToCreatePost()
+    }
+    
+}

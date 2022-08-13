@@ -12,9 +12,63 @@ import UIKit
 
 class PostsViewController: UIViewController, PostsViewProtocol {
 
-	var presenter: PostsPresenterProtocol?
+    @IBOutlet private weak var tableView: UITableView!
+    
+    var presenter: PostsPresenterProtocol?
+    private var postViewModels: [PostViewModel] = []
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationItems()
+        setupTableView()
+        presenter?.viewDidLoad()
     }
+
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.showsVerticalScrollIndicator = false
+        tableView.registerCell(type: PostTableViewCell.self)
+    }
+    
+    private func setupNavigationItems() {
+        navigationItem.title = "Feed"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create+", style: .plain, target: self, action: #selector(didTapCreateButton))
+    }
+    
+    @objc private func didTapCreateButton() {
+        presenter?.presentCreateScreen()
+    }
+    
+    func populateViewModels(viewModels: [PostViewModel]) {
+        self.postViewModels = viewModels
+        tableView.dataSource = self
+        tableView.reloadData()
+    }
+    
+
+}
+
+extension PostsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
+}
+
+extension PostsViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return postViewModels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueCell(
+             withType: PostTableViewCell.self,
+             for: indexPath) as? PostTableViewCell else {
+                  return UITableViewCell()
+        }
+        let postViewModel = postViewModels[indexPath.row]
+        cell.set(viewModel: postViewModel)
+        return cell
+    }
+    
 }

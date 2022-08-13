@@ -28,4 +28,9 @@ class PostsRouter: PostsWireframeProtocol {
 
         return navigationController
     }
+    
+    func routeToCreatePost() {
+        let createPostVC = CreatePostRouter.createModule()
+        viewController?.navigationController?.pushViewController(createPostVC, animated: true)
+    }
 }

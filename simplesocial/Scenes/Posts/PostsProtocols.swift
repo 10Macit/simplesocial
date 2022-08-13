@@ -9,34 +9,39 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: Wireframe -
 protocol PostsWireframeProtocol: AnyObject {
-
+    func routeToCreatePost()
 }
 // MARK: Presenter -
 protocol PostsPresenterProtocol: AnyObject {
 
     var interactor: PostsInteractorInputProtocol? { get set }
+    
+    func viewDidLoad()
+    func presentCreateScreen()
 }
 
 // MARK: Interactor -
 protocol PostsInteractorOutputProtocol: AnyObject {
 
-    /* Interactor -> Presenter */
+    func presentPosts(posts: [Post])
 }
 
 protocol PostsInteractorInputProtocol: AnyObject {
 
     var presenter: PostsInteractorOutputProtocol?  { get set }
 
-    /* Presenter -> Interactor */
+    func fetchPosts()
+    
 }
 
 // MARK: View -
 protocol PostsViewProtocol: AnyObject {
 
     var presenter: PostsPresenterProtocol?  { get set }
-
-    /* Presenter -> ViewController */
+    
+    func populateViewModels(viewModels: [PostViewModel])
 }
